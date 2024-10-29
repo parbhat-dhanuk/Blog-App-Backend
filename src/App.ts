@@ -1,11 +1,13 @@
 import express from "express"
-import * as dotenv from "dotenv"
-
+import dotenv from "dotenv"
+import connectToDatabase from "./database/database"
 
 const app=express()
 dotenv.config()
+connectToDatabase()
 const port = process.env.port
 app.use(express.json())
+connectToDatabase()
 
 
 
